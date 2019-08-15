@@ -19,13 +19,13 @@ script:
   # run build script specified in package.json
   - npm run ci
   # call script for deploying of produced artifacts
-  - bash ./.travis-deploy.sh
+  #- bash ./.travis-deploy.sh
 after_success:
   - codecov
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   local_dir: dist/
-#   github_token: $GITHUB_TOKEN
-#   on:
-#     branch: master
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: dist/angular-ngrx-material-starter/
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
