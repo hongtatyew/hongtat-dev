@@ -18,8 +18,6 @@ install:
 script:
   # run build script specified in package.json
   - npm run ci
-  # call script for deploying of produced artifacts
-  #- bash ./.travis-deploy.sh
 after_success:
   - codecov
 deploy:
@@ -27,5 +25,6 @@ deploy:
   skip_cleanup: true
   local_dir: dist/angular-ngrx-material-starter/
   github_token: $GITHUB_TOKEN
+  fqdn: hongtat.dev
   on:
     branch: master
